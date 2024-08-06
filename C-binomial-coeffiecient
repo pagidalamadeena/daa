@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n, k;
+    int result = 1;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+    printf("Enter k: ");
+    scanf("%d", &k);
+    if (k > n) {
+        result = 0; 
+    } else {
+        if (k > n - k) {
+            k = n - k;
+        }
+
+        for (int i = 0; i < k; i++) {
+            result *= (n - i);
+            result /= (i + 1);
+        }
+    }
+
+    printf("Binomial Coefficient C(%d, %d) = %d\n", n, k, result);
+
+    return 0;
+}
